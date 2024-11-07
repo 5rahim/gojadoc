@@ -7,14 +7,12 @@ package main
 
 import (
 	"github.com/dop251/goja"
-	"github.com/dop251/goja/parser"
 	
 	"github.com/5rahim/gojadoc"
 )
 
 func main() {
 	vm := goja.New()
-    vm.SetParserOptions(parser.WithDisableSourceMaps)
 	
     err := gojadoc.BindDocument(vm)
     if err != nil {
@@ -60,6 +58,7 @@ const titles = $.find("section")
 ---
 
 ```ts
+// doc.d.ts
 declare class DocSelection {
     // Retrieves the value of the specified attribute for the first element in the DocSelection.
     // To get the value for each element individually, use a looping construct such as each or map.
